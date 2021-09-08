@@ -1,4 +1,5 @@
  import './panelheader.css'
+ import {Link} from 'react-router-dom'
  const PanelHeader=()=>{
     return(
         <div className=" bg-secondary p-2 panelheader">
@@ -8,7 +9,7 @@
                 <a href="#" className="ms-2"> Vendor Dashboard</a>
                 <a href="#" className="ms-2">Sign In</a>
                 <span className="ms-2">or</span>
-                <a href="#" className="ms-2">Create an Account</a>
+                <Link to="/createaccount" className="ms-2">Create an Account</Link>
             </div>
         </div>
     )

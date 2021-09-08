@@ -6,6 +6,7 @@ import Offers from '../offers/Offers'
 import AllCategories from '../allcategories/AllCategories'
 import Footer from '../footer/Footer'
 import {BrowserRouter, Switch, Route , Redirect} from 'react-router-dom'
+import CreateAccount from '../createaccount/CreateAccount'
 function UserHomePage(){
     return(
         <BrowserRouter>
@@ -20,10 +21,13 @@ function UserHomePage(){
                             <Offers/>
                             <AllCategories/>
                         </Route>
-                        
+                        <Route path="/createaccount">
+                            <CreateAccount/>
+                        </Route>
                         <Route path="/">
                             <Redirect to="/home"/>
                         </Route>
+                        
                     </Switch>
                 </div>
 

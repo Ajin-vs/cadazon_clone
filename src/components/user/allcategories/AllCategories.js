@@ -12,7 +12,7 @@ function AllCategories(){
             <div className="row row-cols-1 row-cols-lg-3 row-cols-md-3 row-cols-sm-1 text-center">
                 
                 <div className="col mt-2 ">
-                    <img src={access}/>
+                    <img src={access} alt=""/>
                 </div>
 
                 <div className="col mt-2">
