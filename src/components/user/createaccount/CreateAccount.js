@@ -1,10 +1,17 @@
 import {useForm} from 'react-hook-form'
-
+import { useState } from 'react';
 function CreateAccount(){
-
+    const [psw,setPsw] = useState(false)
     let {register,handleSubmit,formState:{errors}} = useForm()
     const handleFormSubmit =(userObj)=>{
         console.log("userObj",userObj);
+        if(userObj.password !== userObj.conpassword){
+            setPsw(true)
+        }
+        else{
+            setPsw(false)
+            
+        }
     }
     return(
         <div className="col  col-lg-6 col-sm-12 col-12 col-md-7">
@@ -20,6 +27,21 @@ function CreateAccount(){
             <input id="secondname" {...register('lastname',{required:true})} className="form-control"/>
             {errors.lastname?.type === 'required' && <p className="text-danger">Second name is required *</p>}
             
+
+            <p className="mt-5">Sign-in Information</p>
+            <hr/>
+            <label className="form-label" htmlFor="email">  Email *</label>
+            <input type="email" id="email" {...register('email',{required:true})} className={`form-control`}/>
+            {errors.email?.type==='required' && <p className="text-danger">email is required*</p>}
+
+            <label className="form-label" htmlFor="psw">  Password *</label>
+            <input type="password" id="psw" {...register('password',{required:true})} className={`form-control`} />
+            {errors.password?.type==='required' && <p className="text-danger">password is required*</p>}
+
+            <label className="form-label" htmlFor="cpsw"> confirm Password *</label>
+            <input type="password" id="cpsw" {...register('conpassword',{required:true})} className={`form-control`} />
+            {errors.conpassword?.type==='required' && <p className="text-danger">password is required*</p>}
+            {psw && <p className="text-danger">enter same password</p>}
             <div className="col col-lg-4 col-md-5 col-sm-12 col-12">
                 <button type="submit"  className="btn btn-primary mt-3 w-100"  >Create an Account</button>
             </div>

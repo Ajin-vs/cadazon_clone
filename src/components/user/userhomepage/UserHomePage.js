@@ -12,7 +12,7 @@ function UserHomePage(){
         <BrowserRouter>
             <div>
                 <PanelHeader/>
-                <Header/>
+                {/* <Header/> */}
                 <Category/>
                 <div className="p-4">
                     <Switch>
